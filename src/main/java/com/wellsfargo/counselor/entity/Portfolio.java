@@ -18,7 +18,7 @@ public class Portfolio {
     private long portfolioId;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "client_id", nullable = false)
     private Client clientId;
 
     @Column(nullable = false)

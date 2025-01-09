@@ -58,6 +58,10 @@ public class Client {
         return clientId;
     }
     
+    public Advisor getAdvisorId() {
+        return advisorId;
+    }
+    
     public String getFirstName() {
         return firstName;
     }
