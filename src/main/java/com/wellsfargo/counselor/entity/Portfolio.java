@@ -29,6 +29,10 @@ public class Portfolio {
 
     }
 
+    public Portfolio(Client clientId) {
+        this.clientId = clientId;
+    }
+
     public long getPortfolioId() {
         return portfolioId;
     }

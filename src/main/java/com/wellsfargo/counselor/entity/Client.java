@@ -1,4 +1,5 @@
 package com.wellsfargo.counselor.entity;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,36 +17,27 @@ public class Client {
     @JoinColumn(name = "advisor_id", nullable = false)
     private Advisor advisorId;
 
-    @Column(
-        nullable = false
-    )
+    @Column(nullable = false)
     private String firstName;
 
-    @Column(
-        nullable = false
-    )
+    @Column(nullable = false)
     private String lastName;
 
-    @Column(
-        nullable = false
-    )
+    @Column(nullable = false)
     private String address;
 
-    @Column(
-        nullable = false
-    )
+    @Column(nullable = false)
     private String phone;
 
-    @Column(
-        nullable = false
-    )
+    @Column(nullable = false)
     private String email;
 
-    protected Client(){
+    protected Client() {
 
     }
 
-    public Client(String firstName, String lastName, String address, String phone, String email){
+    public Client(Advisor advisorId,String firstName, String lastName, String address, String phone, String email) {
+        this.advisorId = advisorId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -57,11 +49,15 @@ public class Client {
     public long getClientId() {
         return clientId;
     }
-    
+
     public Advisor getAdvisorId() {
         return advisorId;
     }
-    
+
+    public void setAdvisorId(Advisor advisorId) {
+        this.advisorId = advisorId;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -73,15 +69,15 @@ public class Client {
     public String getLastName() {
         return lastName;
     }
-    
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    
+
     public String getAddress() {
         return address;
     }
-    
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -89,7 +85,7 @@ public class Client {
     public String getPhone() {
         return phone;
     }
-    
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -97,9 +93,8 @@ public class Client {
     public String getEmail() {
         return email;
     }
-    
+
     public void setEmail(String email) {
         this.email = email;
     }
 }
-
